@@ -1,5 +1,6 @@
 package lotto;
 
+import lotto.model.entity.Lotto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -36,6 +37,6 @@ class LottoTest {
     @Test
     void createLottoNormally() {
         Lotto lotto = new Lotto(List.of(44, 21, 1, 4, 5,2));
-        System.out.println(lotto);
+        assertThat(lotto.toString()).isEqualTo("[1, 2, 4, 5, 21, 44]");
     }
 }

@@ -1,6 +1,5 @@
-package lotto;
+package lotto.model.entity;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,25 +10,25 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
-        sortNumbers(numbers);
-        this.numbers = numbers;
+        this.numbers = sortNumbers(numbers);
     }
 
-    private static void sortNumbers(List<Integer> numbers) {
+    protected static List<Integer> sortNumbers(List<Integer> numbers) {
         List<Integer> sortedList = numbers.stream()
                 .sorted()
                 .collect(Collectors.toList());
+        return sortedList;
     }
 
 
-    private void validate(List<Integer> numbers) {
+    protected void validate(List<Integer> numbers) {
         validateLottoSize(numbers);
         validateLottoRange(numbers);
         validateLottoDuplication(numbers);
     }
 
 
-    private void validateLottoRange(List<Integer> numbers) {
+    protected void validateLottoRange(List<Integer> numbers) {
         for (int i = 0; i < numbers.size(); i++) {
             int number = numbers.get(i);
             if (number < 0 || number > 45) {
@@ -44,7 +43,7 @@ public class Lotto {
         }
     }
 
-    private void validateLottoDuplication(List<Integer> numbers) {
+    protected void validateLottoDuplication(List<Integer> numbers) {
         Set<Integer> checkDuplicated = new HashSet<>(numbers);
         if (checkDuplicated.size() != numbers.size()) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 중복될 수 없습니다.");
@@ -54,5 +53,9 @@ public class Lotto {
     @Override
     public String toString() {
         return numbers.toString();
+    }
+
+    protected List<Integer> getNumbers() {
+        return numbers;
     }
 }
