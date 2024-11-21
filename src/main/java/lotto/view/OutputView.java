@@ -7,7 +7,7 @@ import java.util.EnumMap;
 public class OutputView {
 
     public void displayLottoQuantity(int size) {
-        System.out.println(size + "개를 구매했습니다");
+        System.out.println(size + "개를 구매했습니다.");
     }
 
     public void displayLottos() {
@@ -15,6 +15,7 @@ public class OutputView {
     }
 
     public void displayResult(EnumMap<LottoRank, Integer> rankCount) {
+        System.out.println("당첨 통계");
         StringBuilder result = new StringBuilder("---\n");
 
         for (LottoRank rank : LottoRank.values()) {
@@ -31,7 +32,7 @@ public class OutputView {
 
 
     public void displayProfitRate(double profitRate) {
-        System.out.println("수익률 " + profitRate);
+        System.out.println("총 수익률은 " + profitRate+ "%입니다.");
     }
 
 

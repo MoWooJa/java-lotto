@@ -10,6 +10,7 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
+        validateDuplicateNumber(numbers);
         validateNumberRange(numbers);
         this.numbers = numbers;
     }
@@ -20,14 +21,14 @@ public class Lotto {
 
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException("ERROR : 로또 번호는 6개 여야 합니다.");
+            throw new IllegalArgumentException("[ERROR] : 로또 번호는 6개 여야 합니다.");
         }
     }
 
     private void validateNumberRange(List<Integer> numbers) {
         for (Integer number : numbers) {
             if (number < MIN_NUMBER || number > MAX_NUMBER) {
-                throw new IllegalArgumentException("ERROR : 로또 숫자는 1 ~ 45");
+                throw new IllegalArgumentException("[ERROR] : 로또 숫자는 1 ~ 45");
             }
         }
     }
@@ -35,14 +36,16 @@ public class Lotto {
     private void validateDuplicateNumber(List<Integer> numbers) {
         Set set = new HashSet(numbers);
         if (set.size() != numbers.size()) {
-            throw new IllegalArgumentException("ERROR : 중복된 숫자는 존재할 수 없음");
+            throw new IllegalArgumentException("[ERROR] : 중복된 숫자는 존재할 수 없음");
         }
     }
 
     public void printLotto() {
-        for (Integer number : numbers) {
-            System.out.print(number + " ");
-        }
+        System.out.print("[" + String.join(", ", numbers.stream()
+                .sorted()
+                .map(String::valueOf)
+                .toList()) + "]");
+
     }
 
     public static Lotto create(List<Integer> lottoNumbers) {

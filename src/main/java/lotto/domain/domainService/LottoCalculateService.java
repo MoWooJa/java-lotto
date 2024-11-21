@@ -29,14 +29,18 @@ public class LottoCalculateService {
 
     public double calculateProfitRate(EnumMap<LottoRank, Integer> rankCount) {
         long totalPrize = 0L;
-        long totalMoneySpent = rankCount.size() * 1000L;
+        long totalMoneySpent = rankCount.values().
+                stream()
+                .mapToInt(Integer::intValue)
+                .sum()*1000L;
 
         for (Map.Entry<LottoRank, Integer> entry : rankCount.entrySet()) {
-            totalPrize += ((long) entry.getValue() * entry.getKey().getPrize());
+            long rankTotalPrize = ((long) entry.getValue() * entry.getKey().getPrize());
+            totalPrize += rankTotalPrize;
         }
 
-        double profitRate = ((double) totalPrize / totalMoneySpent);
-        return Math.round(profitRate * 100) / 100.0;
+        double profitRate = (double) totalPrize / totalMoneySpent * 100;
+        return Math.round(profitRate * 100.0) / 100.0;
     }
 
 }

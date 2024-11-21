@@ -26,7 +26,7 @@ public class Controller {
         lottos.displayLottos();
 
         Lotto winningLotto = enterWinningNumbers();
-        BonusNumber bonusNumber = enterBonusNumber();
+        BonusNumber bonusNumber = enterBonusNumber(winningLotto);
 
         EnumMap<LottoRank, Integer> rankCount = lottoService.calculateRankCount(lottos, winningLotto, bonusNumber);
         double profitRate = lottoService.calculateProfitRate(rankCount);
@@ -71,13 +71,13 @@ public class Controller {
         return winningLotto;
     }
 
-    private BonusNumber enterBonusNumber() {
+    private BonusNumber enterBonusNumber(Lotto winningLotto) {
         String bonusNumberStr;
         BonusNumber bonusNumber;
         while (true) {
             try {
                 bonusNumberStr = inputView.getBonusNumber();
-                bonusNumber = new BonusNumber(bonusNumberStr);
+                bonusNumber = new BonusNumber(bonusNumberStr, winningLotto);
                 bonusNumber.printBonusNumber();
                 break;
             } catch (IllegalArgumentException e) {
