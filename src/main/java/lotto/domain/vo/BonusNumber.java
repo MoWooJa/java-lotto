@@ -1,11 +1,13 @@
-package lotto.domain;
+package lotto.domain.vo;
+
+import lotto.domain.model.Lotto;
 
 public class BonusNumber {
     //TODO 보너스 넘버는 당첨 로또와 겹치면 안됨..
     // 보너스 넘버는 1~45
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 45;
-    private int bonusNumber;
+    private final int bonusNumber;
 
     public BonusNumber(String bonusNumber, Lotto winningLotto) {
         try {

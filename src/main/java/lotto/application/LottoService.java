@@ -1,8 +1,10 @@
-package lotto.applicationService;
+package lotto.application;
 
-import lotto.domain.*;
-import lotto.domain.domainService.LottoCalculateService;
-import lotto.domain.domainService.LottoFactoryService;
+import lotto.domain.model.*;
+import lotto.domain.service.LottoCalculateService;
+import lotto.domain.service.LottoFactoryService;
+import lotto.domain.vo.BonusNumber;
+import lotto.domain.vo.Money;
 
 import java.util.EnumMap;
 import java.util.List;

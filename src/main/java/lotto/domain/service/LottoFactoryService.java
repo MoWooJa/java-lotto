@@ -1,17 +1,16 @@
-package lotto.domain.domainService;
+package lotto.domain.service;
 
-import lotto.domain.Lotto;
-import lotto.domain.LottoNumberGenerator;
-import lotto.domain.Money;
+import lotto.domain.model.Lotto;
+import lotto.domain.vo.Money;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LottoFactoryService {
-    private LottoNumberGenerator lottoNumberGenerator;
+    private LottoNumberGeneratorService lottoNumberGeneratorService;
 
-    public LottoFactoryService(LottoNumberGenerator lottoNumberGenerator) {
-        this.lottoNumberGenerator = lottoNumberGenerator;
+    public LottoFactoryService(LottoNumberGeneratorService lottoNumberGeneratorService) {
+        this.lottoNumberGeneratorService = lottoNumberGeneratorService;
     }
 
     public List<Lotto> createLottos(Money money) {
@@ -26,7 +25,7 @@ public class LottoFactoryService {
     }
 
     private Lotto createLotto() {
-        List<Integer> numbers = lottoNumberGenerator.generateNumbers();
+        List<Integer> numbers = lottoNumberGeneratorService.generateNumbers();
         return Lotto.create(numbers);
     }
 

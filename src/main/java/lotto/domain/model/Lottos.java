@@ -1,4 +1,8 @@
-package lotto.domain;
+package lotto.domain.model;
+
+import lotto.domain.dto.LottoResult;
+import lotto.domain.dto.LottoResults;
+import lotto.domain.vo.BonusNumber;
 
 import java.util.List;
 

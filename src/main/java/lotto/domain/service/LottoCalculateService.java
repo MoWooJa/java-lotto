@@ -1,6 +1,9 @@
-package lotto.domain.domainService;
+package lotto.domain.service;
 
-import lotto.domain.*;
+import lotto.domain.dto.LottoResult;
+import lotto.domain.dto.LottoResults;
+import lotto.domain.model.*;
+import lotto.domain.vo.BonusNumber;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -10,7 +13,7 @@ public class LottoCalculateService {
     public LottoCalculateService(){
     }
 
-    public EnumMap<LottoRank, Integer> determineRank(Lottos lottos, Lotto winningLotto,BonusNumber bonusNumber) {
+    public EnumMap<LottoRank, Integer> determineRank(Lottos lottos, Lotto winningLotto, BonusNumber bonusNumber) {
         EnumMap<LottoRank, Integer> rankCount = new EnumMap<>(LottoRank.class);
 
         for (LottoRank value : LottoRank.values()) {

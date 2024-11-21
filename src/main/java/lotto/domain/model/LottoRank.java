@@ -1,4 +1,6 @@
-package lotto.domain;
+package lotto.domain.model;
+
+import lotto.domain.dto.LottoResult;
 
 public enum LottoRank {
     SIX_MATCH(6, 2_000_000_000, false, "6개 일치"),

@@ -1,7 +1,7 @@
-package lotto.domain;
+package lotto.domain.vo;
 
 public class Money {
-    private int money;
+    private final int money;
 
     public Money(String money) {
         try{

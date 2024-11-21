@@ -1,6 +1,6 @@
 package lotto.view;
 
-import lotto.domain.LottoRank;
+import lotto.domain.model.LottoRank;
 
 import java.util.EnumMap;
 

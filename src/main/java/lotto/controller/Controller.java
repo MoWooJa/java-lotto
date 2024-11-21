@@ -1,7 +1,9 @@
 package lotto.controller;
 
-import lotto.applicationService.LottoService;
-import lotto.domain.*;
+import lotto.application.LottoService;
+import lotto.domain.model.*;
+import lotto.domain.vo.BonusNumber;
+import lotto.domain.vo.Money;
 import lotto.util.Parser;
 import lotto.view.InputView;
 import lotto.view.OutputView;
