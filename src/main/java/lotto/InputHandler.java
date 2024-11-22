@@ -15,6 +15,14 @@ public class InputHandler {
         return handle(inputView::purchaseLotto);
     }
 
+    public Lotto askLottoNumber() {
+        return handle(inputView::getLottoNumber);
+    }
+
+    public WinLotto askBonusNumber(Lotto lotto) {
+        return handle(() -> inputView.getBonusNumber(lotto));
+    }
+
 
     private <T> T handle(Supplier<T> supplier) {
         while (true) {

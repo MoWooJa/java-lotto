@@ -2,7 +2,12 @@ package lotto;
 
 import static lotto.Exceptions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InputParser {
+
+    private static final String DELIMITER = ",";
 
     public static Integer toInteger(String input) {
         try {
@@ -12,4 +17,13 @@ public class InputParser {
         }
     }
 
+    public static List<Integer> splitByDelimiter(String input) {
+        String[] arr = input.split(DELIMITER);
+        List<Integer> numbers = new ArrayList<>();
+        for (String s : arr) {
+            Integer lottoNumber = toInteger(s);
+            numbers.add(lottoNumber);
+        }
+        return numbers;
+    }
 }
