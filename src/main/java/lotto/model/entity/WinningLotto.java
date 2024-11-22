@@ -38,7 +38,7 @@ public class WinningLotto extends Lotto {
     }
 
     private WinningType scoreConverter(int score, List<Integer> target) {
-        if (score == WinningType.SECOND.getCount()) {
+        if (score == WinningType.SECOND.getCountCondition()) {
             if (target.contains(bonus)) {
                 return WinningType.SECOND;
             }

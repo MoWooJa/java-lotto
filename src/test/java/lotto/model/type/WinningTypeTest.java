@@ -22,6 +22,7 @@ class WinningTypeTest {
         assertThat(actualType).isEqualTo(WinningType.valueOf(expectedTypeName));
     }
 
+
     @ParameterizedTest(name = "WiningType {0}은 등수 {1}, 맞춘 갯수 {2}, 상금 {3}")
     @CsvSource({
             "FIRST, 1, 6, 2_000_000_000",
@@ -37,7 +38,7 @@ class WinningTypeTest {
 
         //then
         assertThat(type.getRank()).isEqualTo(expectedRank);
-        assertThat(type.getCount()).isEqualTo(expectedCount);
-        assertThat(type.getPrise()).isEqualTo(expectedPrise);
+        assertThat(type.getCountCondition()).isEqualTo(expectedCount);
+        assertThat(type.getPrize()).isEqualTo(expectedPrise);
     }
 }

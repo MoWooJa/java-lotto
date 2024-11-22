@@ -1,4 +1,4 @@
-package lotto;
+package lotto.model.entity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -6,8 +6,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import lotto.model.entity.Lotto;
-import lotto.model.entity.WinningLotto;
 import lotto.model.type.WinningType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

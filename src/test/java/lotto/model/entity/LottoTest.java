@@ -1,13 +1,11 @@
-package lotto;
-
-import lotto.model.entity.Lotto;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
+package lotto.model.entity;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import java.util.List;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 class LottoTest {
     @DisplayName("로또 번호의 개수가 6개가 넘어가면 예외가 발생한다.")
@@ -28,7 +26,7 @@ class LottoTest {
     @DisplayName("로또 번호에 1~45 범위를 벗어나는 숫자가 있으면 예외가 발생한다.")
     @Test
     void createLottoOutOfRange() {
-        assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 46)))
+        assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5, 46)))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.");
     }
@@ -36,7 +34,7 @@ class LottoTest {
     @DisplayName("정상적인 로또 번호 입력시 번호가 정렬되어 저장된다.")
     @Test
     void createLottoNormally() {
-        Lotto lotto = new Lotto(List.of(44, 21, 1, 4, 5,2));
+        Lotto lotto = new Lotto(List.of(44, 21, 1, 4, 5, 2));
         assertThat(lotto.toString()).isEqualTo("[1, 2, 4, 5, 21, 44]");
     }
 }
