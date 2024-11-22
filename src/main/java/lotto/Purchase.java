@@ -3,6 +3,14 @@ package lotto;
 import static lotto.Exceptions.INVALID_AMOUNT;
 
 public class Purchase {
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
     private final Integer amount;
 
     private final Integer quantity;
