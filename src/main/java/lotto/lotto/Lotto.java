@@ -1,8 +1,8 @@
-package lotto;
+package lotto.lotto;
 
-import static lotto.Exceptions.LOTTO_NUMBER_DUPLICATED;
-import static lotto.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
-import java.util.Collections;
+import static lotto.common.Exceptions.LOTTO_NUMBER_DUPLICATED;
+import static lotto.common.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;

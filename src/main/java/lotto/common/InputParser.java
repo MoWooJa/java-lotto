@@ -1,6 +1,6 @@
-package lotto;
+package lotto.common;
 
-import static lotto.Exceptions.*;
+import static lotto.common.Exceptions.*;
 
 import java.util.ArrayList;
 import java.util.List;

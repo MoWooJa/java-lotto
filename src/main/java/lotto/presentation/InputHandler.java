@@ -1,7 +1,9 @@
-package lotto;
+package lotto.presentation;
 
-import java.util.List;
 import java.util.function.Supplier;
+import lotto.lotto.Purchase;
+import lotto.lotto.WinLotto;
+import lotto.lotto.Lotto;
 
 public class InputHandler {
 

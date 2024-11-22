@@ -1,7 +1,8 @@
-package lotto;
+package lotto.lotto;
 
 import java.util.ArrayList;
 import java.util.List;
+import lotto.lottoResult.Prize;
 
 public class Lottos {
     private final List<Lotto> lottos;

@@ -1,4 +1,4 @@
-package lotto;
+package lotto.common;
 
 public enum Exceptions {
     NO_NUMBER("[ERROR] 숫자만 입력 가능합니다."),

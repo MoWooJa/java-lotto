@@ -1,17 +1,11 @@
-package lotto;
+package lotto.presentation;
 
 import java.util.List;
+import lotto.lottoResult.LottoResult;
+import lotto.lottoResult.Prize;
+import lotto.lottoResult.PrizeWithCount;
 
-public class OutputView {
-
-    public void printPublishedLotto(Purchase purchase, Lottos lottos) {
-        System.out.printf("%d개를 구매했습니다.", purchase.getQuantity());
-        System.out.println();
-        for (Lotto lotto : lottos.getLottos()) {
-            System.out.println(lotto.getNumbers());
-        }
-        System.out.println();
-    }
+public class LottoResultView {
 
     public void printLottoResult(LottoResult lottoResult) {
         System.out.println("당첨 통계");

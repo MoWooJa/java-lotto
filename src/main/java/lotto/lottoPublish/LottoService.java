@@ -1,7 +1,9 @@
-package lotto;
+package lotto.lottoPublish;
 
 import java.util.ArrayList;
 import java.util.List;
+import lotto.lotto.Lotto;
+import lotto.lotto.Lottos;
 
 public class LottoService {
     private final LottoGenerator lottoGenerator;

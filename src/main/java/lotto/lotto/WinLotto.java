@@ -1,6 +1,7 @@
-package lotto;
+package lotto.lotto;
 
 import java.util.List;
+import lotto.lottoResult.Prize;
 
 public class WinLotto {
     private final Lotto lotto;

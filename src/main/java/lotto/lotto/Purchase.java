@@ -1,6 +1,6 @@
-package lotto;
+package lotto.lotto;
 
-import static lotto.Exceptions.INVALID_AMOUNT;
+import static lotto.common.Exceptions.INVALID_AMOUNT;
 
 public class Purchase {
     public Integer getAmount() {

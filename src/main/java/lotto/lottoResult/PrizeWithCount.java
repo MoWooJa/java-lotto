@@ -1,4 +1,4 @@
-package lotto;
+package lotto.lottoResult;
 
 public class PrizeWithCount {
     private final Prize prize;

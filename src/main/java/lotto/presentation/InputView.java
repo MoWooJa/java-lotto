@@ -1,7 +1,12 @@
-package lotto;
+package lotto.presentation;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
+import lotto.common.InputParser;
+import lotto.lotto.Purchase;
+import lotto.lotto.WinLotto;
+import lotto.lotto.Bonus;
+import lotto.lotto.Lotto;
 
 public class InputView {
 

@@ -1,6 +1,6 @@
-package lotto;
+package lotto.lotto;
 
-import static lotto.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
+import static lotto.common.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
 
 import java.util.List;
 
