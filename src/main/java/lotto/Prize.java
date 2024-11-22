@@ -31,4 +31,8 @@ public enum Prize {
         }
         return NONE;
     }
+
+    public Long getPrize() {
+        return prize;
+    }
 }

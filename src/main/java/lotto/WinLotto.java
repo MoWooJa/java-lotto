@@ -21,10 +21,9 @@ public class WinLotto {
         return bonus.getNumber();
     }
 
-    public WinLottoDto compareWinNumber(List<Integer> numbers) {
+    public Prize compareWinNumber(List<Integer> numbers) {
         boolean bonusStatus = bonus.containBonus(numbers);
         int count = lotto.containNumber(numbers);
-        Prize prize = Prize.of(count, bonusStatus);
-        return WinLottoDto.of(prize, bonusStatus);
+        return Prize.of(count, bonusStatus);
     }
 }

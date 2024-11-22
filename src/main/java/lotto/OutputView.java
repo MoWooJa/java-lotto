@@ -10,4 +10,8 @@ public class OutputView {
         }
         System.out.println();
     }
+
+    public void printLottoResult(LottoResult lottoResult) {
+
+    }
 }

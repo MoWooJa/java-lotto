@@ -14,12 +14,13 @@ public class Lottos {
         return lottos;
     }
 
-    public List<WinLottoDto> compareWithWinLotto(WinLotto winLotto) {
-        List<WinLottoDto> winLottos = new ArrayList<>();
+    public List<Prize> compareWithWinLotto(WinLotto winLotto) {
+        List<Prize> prizes = new ArrayList<>();
+        // 로또 prize 개수 세기
         for (Lotto lotto : lottos) {
-            WinLottoDto winLottoDto = winLotto.compareWinNumber(lotto.getNumbers());
-            winLottos.add(winLottoDto);
+            Prize prize = winLotto.compareWinNumber(lotto.getNumbers());
+            prizes.add(prize);
         }
-        return winLottos;
+        return prizes;
     }
 }

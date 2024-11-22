@@ -1,5 +1,7 @@
 package lotto;
 
+import java.util.List;
+
 public class LottoController {
     private final InputHandler inputHandler;
     private final LottoService lottoService;
@@ -19,5 +21,9 @@ public class LottoController {
         Lottos publishedLotto = lottoService.publish(purchase.getQuantity());
         outputView.printPublishedLotto(purchase, publishedLotto);
 
+        // 로또 결과 구하기
+        List<Prize> prizes= publishedLotto.compareWithWinLotto(winLotto);
+        LottoResult lottoResult = new LottoResult(prizes, purchase.getAmount());
+        outputView.printLottoResult(lottoResult);
     }
 }
