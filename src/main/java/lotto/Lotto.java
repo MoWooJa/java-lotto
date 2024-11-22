@@ -2,8 +2,6 @@ package lotto;
 
 import static lotto.Exceptions.LOTTO_NUMBER_DUPLICATED;
 import static lotto.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
-
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -15,8 +13,13 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
-        this.numbers = numbers;
-        sortNumbers();
+        this.numbers = sortedNumbers(numbers);
+    }
+
+    private List<Integer> sortedNumbers(List<Integer> numbers) {
+        return numbers.stream()
+                .sorted()
+                .toList();
     }
 
     private void validate(List<Integer> numbers) {
@@ -24,7 +27,7 @@ public class Lotto {
             throw new IllegalArgumentException();
         }
         for (Integer number : numbers) {
-            if (number >= 1 && number <= 45) {
+            if (number < 1 || number > 45) {
                 throw new IllegalArgumentException(LOTTO_NUMBER_RANGE_ERROR.getMessage());
             }
         }
@@ -40,10 +43,6 @@ public class Lotto {
                 throw new IllegalArgumentException(LOTTO_NUMBER_DUPLICATED.getMessage());
             }
         }
-    }
-
-    public void sortNumbers() {
-        Collections.sort(numbers);
     }
 
     public List<Integer> getNumbers() {
