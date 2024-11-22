@@ -3,6 +3,7 @@ package lotto;
 import static lotto.Exceptions.LOTTO_NUMBER_DUPLICATED;
 import static lotto.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -47,6 +48,16 @@ public class Lotto {
 
     public List<Integer> getNumbers() {
         return numbers;
+    }
+
+    public int containNumber(List<Integer> numbers) {
+        int count = 0;
+        for (Integer number : numbers) {
+            if (this.numbers.contains(number)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     // TODO: 추가 기능 구현

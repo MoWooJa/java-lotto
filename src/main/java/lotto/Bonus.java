@@ -2,6 +2,8 @@ package lotto;
 
 import static lotto.Exceptions.LOTTO_NUMBER_RANGE_ERROR;
 
+import java.util.List;
+
 public class Bonus {
     private final Integer number;
 
@@ -18,5 +20,9 @@ public class Bonus {
 
     public Integer getNumber() {
         return number;
+    }
+
+    public boolean containBonus(List<Integer> numbers) {
+        return numbers.contains(number);
     }
 }
