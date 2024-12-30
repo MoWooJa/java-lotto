@@ -62,7 +62,6 @@ public class LottoController {
         lottoStore.displayLottos(outputView);
     }
 
-
     public void getWinningLotto() {
         List<Integer> winningLottos = getParsedInput(InputType.WINNING_LOTTO);
         lottoStore.saveWinningLotto(winningLottos);
